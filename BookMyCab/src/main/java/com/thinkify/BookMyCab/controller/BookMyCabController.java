@@ -48,7 +48,7 @@ public class BookMyCabController {
 	@GetMapping("/find-ride")
 	public ResponseEntity<String> find_ride(@RequestParam String username, @RequestParam int sourceX, @RequestParam int sourceY,
 			@RequestParam int destX, @RequestParam int destY) {
-//	   try {
+	   try {
 		int[] source= {sourceX,sourceY};
 		int[] dest=  {destX,destY};
 		List<Driver> li = driverObj.getNearestDrivers(username,source,dest); 
@@ -56,12 +56,11 @@ public class BookMyCabController {
 		if (li==null)
 			return new ResponseEntity<>("No Ride Found. Sorry for the inconvinience!",HttpStatus.SERVICE_UNAVAILABLE);
 		else return new ResponseEntity<>(driverObj.choose_ride(username,li)+ " is your driver for your ride.",HttpStatus.OK);
-//	}
-//	catch(Exception e) {
-//		return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR); 
-//	}
+	}
+	catch(Exception e) {
+		return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR); 
+	}
 	}
 	
-	
-	
+
 }
