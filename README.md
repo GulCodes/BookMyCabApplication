@@ -16,6 +16,6 @@ Finally, we've exposed the /find-ride endpoint which will
 
 -------
 
-Improvement Area's that I'll incorporate over time:
-1. Addition of Loggers & Comments
+Improvement Area's that I'll incorporate given some more time:
+1. Addition of Loggers(Log4j)
 2. Using the Lombok Library(@Data) annotations to reduce Getters/Setters/Constructors boilerplate.
